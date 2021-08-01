@@ -6,14 +6,16 @@ module.exports = {
 /*POST********************************************/
   addProduct:async(req,res)=>{     
    
-   const nom = req.body.nom
+   const nomP = req.body.nomP
+   const imageP = req.body.imageP
    const description = req.body.description
    const prix = req.body.prix
   
   try{
       product= new Product({             
        
-        nom,
+        nomP,
+        imageP,
         description,
         prix
         

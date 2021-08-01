@@ -6,6 +6,7 @@ module.exports = {
   addUser:async(req,res)=>{     //asynchronne: promesse vers base de donnée
                                   //req body
    const nom = req.body.nom
+   const image = req.body.image
    const email = req.body.email
    const telephone = req.body.telephone
    const adresse = req.body.adresse
@@ -13,6 +14,7 @@ module.exports = {
   try{
       user= new User({              //constructor    (rq:'user'dans model)et (model=classe) (*)
         nom,
+        image,
         email,
         telephone,   
         adresse,
@@ -68,19 +70,3 @@ updateUser:async(req,res)=>{
 
 
 
-//********seif controller
-
-////module.exports = {
-   //// getAll:function (req,res){
-   //// //res.send('hello users')
-   //// userModel.find((err,users)=>{   //users:parametre(we can put anyname)
-////if(err){
-  ////  return res.status(500).json({        // error data(500)
-     ////   message: "DataNotAvailable",
-     ////   error: err
-    
-   ////  })  
-//}   return res.json(users)
-      //// ////  }) 
-     //// }
-   //// }
